@@ -12,7 +12,7 @@
          <!-- Sidebar user panel (optional) -->
          <div class="user-panel mt-3 pb-0 mb-3 d-flex">
              <div class="info ">
-                 <p style="color:aliceblue" class="justify-content-center">{{ $admin->username }}</p>
+                 <p style="color:aliceblue" class="justify-content-center">Hanafi</p>
              </div>
          </div>
 

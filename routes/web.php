@@ -31,9 +31,9 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/admin', function () {
-    return view('admin/master');
-});
+// Route::get('/admin', function () {
+//     return view('admin/master');
+// });
 // Route::get('/adminproduct', function () {
 //     return view('admin/product');
 // });
@@ -51,7 +51,7 @@ Route::get('/adminproduct', [TokoController::class, 'toko']);
 Route::get('/adminproduct/create', [TokoController::class, 'create']);
 Route::post('/adminproduct/store', [TokoController::class, 'store']);
 Route::get('/adminproduct/{id}/edit', [TokoController::class, 'edit']);
-Route::put('/{id}', [TokoController::class, 'update']);
+Route::put('/admin/{id}', [TokoController::class, 'update']);
 Route::delete('/adminproduct/{id}', [TokoController::class, 'delete']);
 
 Route::get('/', [ProdukController::class, 'index']);
@@ -71,4 +71,4 @@ Route::put('/{id}', [UserController::class, 'update']);
 Route::delete('/adminuser/{id}', [UserController::class, 'delete']);
 
 Route::get('/admin', [UserController::class, 'jumlah']);
-Route::get('/admin', [AdminController::class, 'Admin']);
+Route::get('/admin/master', [AdminController::class, 'Admin']);

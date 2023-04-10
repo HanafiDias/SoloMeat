@@ -118,7 +118,7 @@
                                         role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content p-3">
-                                                <form action="/{{ $item->id }}" method="POST"
+                                                <form action="/admin/{{ $item->id }}" method="POST"
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     @method('put')
@@ -132,6 +132,12 @@
                                                         <input type="text" class="form-control" id="inputAddress2"
                                                             placeholder="https://...." name="link_toko_online"
                                                             value="{{ $item->link_toko_online }}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="inputAddress2">Harga</label>
+                                                        <input type="text" class="form-control" id="inputAddress2"
+                                                            placeholder="" name="harga"
+                                                            value="{{ $item->harga }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputAddress2">Seller</label>
