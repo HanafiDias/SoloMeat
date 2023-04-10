@@ -122,6 +122,7 @@
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     @method('put')
+                                                    <h3>Edit data</h3>
                                                     <div class="form-group">
                                                         <label for="inputAddress">Product Name</label>
                                                         <input type="text" class="form-control" id="inputAddress"

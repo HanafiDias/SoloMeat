@@ -157,7 +157,7 @@
                                 <ul class="list-unstyled mt-3 mb-4">
                                     <li>{{ $item->produk }}</li>
                                 </ul>
-                                <div class="row">
+                                <div class="row justify-content-around">
                                     <div class="col-6 justify-content-center">
                                         <span style="font-size: 20px;">
                                             <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
@@ -166,6 +166,7 @@
                                                         class="fa-brands fa-whatsapp"></i> What'sApp</button></a>
                                         </span>
                                     </div>
+
                                     <div class="col-6 justify-content-center">
                                         <span style="font-size: 20px;">
                                             <a href="{{ $item->link_toko_online }}" target="blank"><button
