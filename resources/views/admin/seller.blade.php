@@ -43,8 +43,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress3">Nomor what'sapp</label>
-                                <input type="text" class="form-control" id="inputAddress3" placeholder="628...."
-                                    name="nomor_wa">
+                                <input type="text" class="form-control" id="inputAddress3"
+                                    placeholder="Gunakan Format 628...." name="nomor_wa">
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress4">Link Toko Online</label>
@@ -113,7 +113,7 @@
                                                     <div class="form-group">
                                                         <label for="inputAddress3">Nomor what'sapp</label>
                                                         <input type="text" class="form-control" id="inputAddress3"
-                                                            placeholder="628...." name="nomor_wa"
+                                                            placeholder="Gunakan Format 628...." name="nomor_wa"
                                                             value="{{ $seller->nomor_wa }}">
                                                     </div>
                                                     <div class="form-group">

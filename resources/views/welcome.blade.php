@@ -143,6 +143,36 @@
             </div>
         </header>
 
+        <!-- slider -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl  mb-4 mx-2">
+                    <div id="slider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="image/opening.png" class="d-block img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="image/event.png" class="d-block img-fluid" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="image/sale.png" class="d-block img-fluid" alt="...">
+                            </div>
+                        </div>
+                        {{-- <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <main>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 @foreach ($data as $item)

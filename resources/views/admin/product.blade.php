@@ -58,8 +58,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Nomer Whatsapp</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="628..."
-                                    name="nomor_whatsapp">
+                                <input type="text" class="form-control" id="inputAddress"
+                                    placeholder=" Gunakan Format 628..." name="nomor_whatsapp">
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="customFile">Product Image</label>

@@ -44,8 +44,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress3">Nomor what'sapp</label>
-                                <input type="text" class="form-control" id="inputAddress3" placeholder="628...."
-                                    name="no_wa">
+                                <input type="text" class="form-control" id="inputAddress3"
+                                    placeholder="Gunakan Format 628...." name="no_wa">
                             </div>
                             <button type="submit" class="btn btn-primary">Add</button>
                         </form>
