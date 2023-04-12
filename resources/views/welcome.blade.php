@@ -36,6 +36,9 @@
     <!-- CSS bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha512-yz/zcjsEPGgd+V8eWfvMwA/Lm+2YRmjpX7W+1JvD3+q3dLrJW5In5+Dp5Jd0t/skaK1Q2X1x/GG+0oKJjKzEeA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
     <style>
@@ -147,7 +150,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl  mb-4 mx-2">
-                    <div id="slider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-interval="3000">
                                 <img src="image/opening.png" class="d-block img-fluid" alt="...">
@@ -159,18 +162,19 @@
                                 <img src="image/sale.png" class="d-block img-fluid" alt="...">
                             </div>
                         </div>
-                        {{-- <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a> --}}
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+
 
 
         <main>
@@ -260,6 +264,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-DrnM80GvnRB7sTDCvGOO2ZY0bF6a8omxKFbPPIZ/HjrCZp0gbAMukV69Uu1POUZZ" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-72Exo7Q+g6ULm+ZVwEBwJQLMn1uGd37IaXf+r/6jzidpzg+EoTJzN7ZwKysNY8gI" crossorigin="anonymous">
+    </script>
+
 </body>
 
 </html>
