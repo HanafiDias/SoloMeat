@@ -53,6 +53,12 @@
             }
         }
 
+        @media (max-width: 767.98px) {
+            .card {
+                width: 100%;
+            }
+        }
+
         .b-example-divider {
             height: 3rem;
             background-color: rgba(0, 0, 0, .1);
@@ -120,7 +126,7 @@
     <div class="gra">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark d-flex d-lg-block"
-            style="z-index: 2000; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+            style="z-index: 2000; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);">
             <div class="container-fluid">
                 <!-- Navbar brand -->
                 <a class="navbar-brand nav-link" href="/">
@@ -145,11 +151,11 @@
 
 
 
-        <div class="p-2">
+        <div class="p-3">
             <!-- slider -->
             <div class="container">
                 <div class="row">
-                    <div class="col-xxl mb-4">
+                    <div class="col-lg mb-4">
                         <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" data-interval="3000">
@@ -175,8 +181,6 @@
                 </div>
             </div>
 
-
-
             <main>
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                     @foreach ($data as $item)
@@ -189,26 +193,26 @@
                                 <div class="card-body">
                                     <h2 class="card-title pricing-card-title">Rp. {{ number_format($item->harga) }}
                                     </h2>
-                                    <ul class="list-unstyled mt-3 mb-4">
-                                        <li>{{ $item->produk }}</li>
-                                    </ul>
-                                    <div class="row justify-content-around">
-                                        <div class="col-6 justify-content-center">
+                                    <div class="btn-group card-body d-flex justify-content-between" role="group"
+                                        aria-label="Button group with nested dropdown">
+                                        <div class="container">
+                                            <ul class="col-1 list-unstyled mt-1 mb-1">
+                                                <li>{{ $item->produk }}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="row text-end">
                                             <span style="font-size: 20px;">
                                                 <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
-                                                    target="blank"><button type="button"
-                                                        class="w-80 btn btn-md btn-success"><i
-                                                            class="fa-brands fa-whatsapp"></i>
-                                                        What'sApp</button></a>
+                                                    target="blank">
+                                                    <button type="button" class="w-80 btn btn-md btn-success"><i
+                                                            class="fa-brands fa-whatsapp"></i></button>
+                                                </a>
                                             </span>
-                                        </div>
-
-                                        <div class="col-6 justify-content-center">
                                             <span style="font-size: 20px;">
-                                                <a href="{{ $item->link_toko_online }}" target="blank"><button
-                                                        type="button" class="w-80 btn btn-md btn-outline-warning"><i
-                                                            class="fa-solid fa-cart-shopping"></i> Toko
-                                                        Online</button></a>
+                                                <a href="{{ $item->link_toko_online }}" target="blank">
+                                                    <button type="button" class="w-80 btn btn-md btn-warning"><i
+                                                            class="fa-solid fa-cart-shopping"></i></button>
+                                                </a>
                                             </span>
                                         </div>
                                     </div>
@@ -220,7 +224,39 @@
             </main>
         </div>
     </div>
-    <footer class="pt-2 my-md-5 pt-md-3 px-4 border-top border-4">
+
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="mailto:hanafidias.hd@email.com"
+                    role="button"><i class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/hanafidias/"
+                    role="button"><i class="fab fa-instagram"></i></a>
+
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/HanafiDias"
+                    role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #171c31);">
+            &copy; 2023 Copyright:
+            <strong class="text-white" href="">Hanafi Dias</strong>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    {{-- <footer class="pt-2 my-md-5 pt-md-3 px-4 border-top border-4">
         <div class="row">
             <div class="col-4 col-md">
                 <img class="mb-2" src="image/beef.png" width="50" height="50">
@@ -240,15 +276,6 @@
                                 class="fa-brands fa-instagram"></i> hanafidias</a></li>
                 </ul>
             </div>
-            {{-- <div class="col-6 col-md">
-                                    <h5>Resources</h5>
-                                    <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
-        </ul>
-         </div> --}}
             <div class="col-4 col-md">
                 <h5>About</h5>
                 <ul class="list-unstyled text-small">
@@ -258,7 +285,7 @@
                 </ul>
             </div>
         </div>
-    </footer>
+    </footer> --}}
 
 
     <!-- JS bootstrap-->
