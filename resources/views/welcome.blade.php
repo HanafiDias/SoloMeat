@@ -24,14 +24,11 @@
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#712cf9">
 
+
     <!-- FontAwesomme -->
     <script src="https://kit.fontawesome.com/1a35c69008.js" crossorigin="anonymous"></script>
 
-    {{-- <!-- Link stylesheet untuk modal -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<!-- Link library javascript untuk modal -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+
 
     <!-- CSS bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -104,6 +101,14 @@
             height: 80px;
             object-fit: cover;
         }
+
+        .gra {
+            background: linear-gradient(to bottom, #E4E2E9, #5E7496, #3F5F90, #0D101C);
+        }
+
+        .navbar .nav-link {
+            color: #E56353 !important;
+        }
     </style>
 
 
@@ -112,151 +117,150 @@
 </head>
 
 <body>
-
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="check" viewBox="0 0 16 16">
-            <title>Check</title>
-            <path
-                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-        </symbol>
-    </svg>
-
-    <div class="p-2 m-4">
-        <header>
-            <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom border-4">
-                <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-                    <img src="image/beef.png" width="40" height="40" class="me-2" viewBox="0 0 118 94"
-                        role="img">
-                    <title>Bootstrap</title>
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
-                        fill="currentColor"></path></svg>
-                    <span class="fs-4">SOLOMEAT</span>
+    <div class="gra">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark d-flex d-lg-block"
+            style="z-index: 2000; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+            <div class="container-fluid">
+                <!-- Navbar brand -->
+                <a class="navbar-brand nav-link" href="/">
+                    <img class="mb-2" src="image/beef.png" width="50" height="50">
+                    <strong>SOLOMEAT</strong>
                 </a>
-
-                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-                    <!-- <a class="me-3 py-2 text-dark text-decoration-none" href="#">Features</a -->
-                    <a class="py-2 text-dark text-decoration-none" href="login">Logout</a>
-                </nav>
+                <div class="d-flex align-items-center">
+                    <a class="btn btn-danger px-3" href="login" role="button"><i
+                            class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
             </div>
+        </nav>
+        <!-- Navbar -->
 
-            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-                <h1 class="display-4 fw-normal">SoloMeat</h1>
-                <p class="fs-5 text-muted">Temukan Daging Terbaik Anda Disini, Pemasaran Daging Se-Solo Raya</p>
-            </div>
-        </header>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="check" viewBox="0 0 16 16">
+                <title>Check</title>
+                <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+            </symbol>
+        </svg>
 
-        <!-- slider -->
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl  mb-4 mx-2">
-                    <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-interval="3000">
-                                <img src="image/opening.png" class="d-block img-fluid" alt="...">
+
+
+        <div class="p-2">
+            <!-- slider -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl mb-4">
+                        <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-interval="3000">
+                                    <img src="image/opening.png" class="d-block img-fluid" alt="...">
+                                </div>
+                                <div class="carousel-item" data-interval="3000">
+                                    <img src="image/event.png" class="d-block img-fluid" alt="...">
+                                </div>
+                                <div class="carousel-item" data-interval="3000">
+                                    <img src="image/sale.png" class="d-block img-fluid" alt="...">
+                                </div>
                             </div>
-                            <div class="carousel-item" data-interval="3000">
-                                <img src="image/event.png" class="d-block img-fluid" alt="...">
-                            </div>
-                            <div class="carousel-item" data-interval="3000">
-                                <img src="image/sale.png" class="d-block img-fluid" alt="...">
-                            </div>
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
-                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
 
 
 
-        <main>
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                @foreach ($data as $item)
-                    <div class="col-md-3 col-lg-3 mb-4">
-                        <div class="card mb-4 rounded-3 shadow-sm">
-                            <div class="card-header py-2 px-2">
-                                <img src="{{ asset('image/store/' . $item->gambar) }}" class="img-thumbnail"
-                                    width="300" height="300">
-                            </div>
-                            <div class="card-body">
-                                <h2 class="card-title pricing-card-title">Rp. {{ number_format($item->harga) }}</h2>
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <li>{{ $item->produk }}</li>
-                                </ul>
-                                <div class="row justify-content-around">
-                                    <div class="col-6 justify-content-center">
-                                        <span style="font-size: 20px;">
-                                            <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
-                                                target="blank"><button type="button"
-                                                    class="w-80 btn btn-md btn-success"><i
-                                                        class="fa-brands fa-whatsapp"></i> What'sApp</button></a>
-                                        </span>
-                                    </div>
+            <main>
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    @foreach ($data as $item)
+                        <div class="col-md-3 col-lg-3 mb-4">
+                            <div class="card mb-4 rounded-3 shadow-sm">
+                                <div class="card-header py-2 px-2">
+                                    <img src="{{ asset('image/store/' . $item->gambar) }}" class="img-thumbnail"
+                                        width="300" height="300">
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title pricing-card-title">Rp. {{ number_format($item->harga) }}
+                                    </h2>
+                                    <ul class="list-unstyled mt-3 mb-4">
+                                        <li>{{ $item->produk }}</li>
+                                    </ul>
+                                    <div class="row justify-content-around">
+                                        <div class="col-6 justify-content-center">
+                                            <span style="font-size: 20px;">
+                                                <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
+                                                    target="blank"><button type="button"
+                                                        class="w-80 btn btn-md btn-success"><i
+                                                            class="fa-brands fa-whatsapp"></i>
+                                                        What'sApp</button></a>
+                                            </span>
+                                        </div>
 
-                                    <div class="col-6 justify-content-center">
-                                        <span style="font-size: 20px;">
-                                            <a href="{{ $item->link_toko_online }}" target="blank"><button
-                                                    type="button" class="w-80 btn btn-md btn-outline-warning"><i
-                                                        class="fa-solid fa-cart-shopping"></i> Toko Online</button></a>
-                                        </span>
+                                        <div class="col-6 justify-content-center">
+                                            <span style="font-size: 20px;">
+                                                <a href="{{ $item->link_toko_online }}" target="blank"><button
+                                                        type="button" class="w-80 btn btn-md btn-outline-warning"><i
+                                                            class="fa-solid fa-cart-shopping"></i> Toko
+                                                        Online</button></a>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="pt-2 my-md-5 pt-md-3 px-4 border-top border-4">
+        <div class="row">
+            <div class="col-4 col-md">
+                <img class="mb-2" src="image/beef.png" width="50" height="50">
+                <small class="d-block mb-3 text-muted">&copy; 2023 Hanafi Dias Arif Dewanto</small>
             </div>
-        </main>
-
-
-        <footer class="pt-2 my-md-5 pt-md-3 border-top border-4">
-            <div class="row">
-                <div class="col-4 col-md">
-                    <img class="mb-2" src="image/beef.png" alt="" width="50" height="50">
-                    <small class="d-block mb-3 text-muted">&copy; 2023 Hanafi Dias Arif Dewanto</small>
-                </div>
-                <div class="col-4 col-md">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-1"><a class="link-secondary text-decoration-none"
-                                href="https://github.com/HanafiDias" target="blank"><i
-                                    class="fa-brands fa-github"></i>
-                                Hanafi Dias Arif Dewanto</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none"
-                                href="mailto:hanafidias.hd@email.com" target="blank"><i
-                                    class="fa-regular fa-envelope"></i> Hanafi Dias Arif Dewanto</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none"
-                                href="https://www.instagram.com/hanafidias/" target="blank"><i
-                                    class="fa-brands fa-instagram"></i> hanafidias</a></li>
-                    </ul>
-                </div>
-                {{-- <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
+            <div class="col-4 col-md">
+                <h5>Contact</h5>
+                <ul class="list-unstyled text-small">
+                    <li class="mb-1"><a class="link-secondary text-decoration-none"
+                            href="https://github.com/HanafiDias" target="blank"><i class="fa-brands fa-github"></i>
+                            Hanafi Dias Arif Dewanto</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none"
+                            href="mailto:hanafidias.hd@email.com" target="blank"><i
+                                class="fa-regular fa-envelope"></i> Hanafi Dias Arif Dewanto</a></li>
+                    <li class="mb-1"><a class="link-secondary text-decoration-none"
+                            href="https://www.instagram.com/hanafidias/" target="blank"><i
+                                class="fa-brands fa-instagram"></i> hanafidias</a></li>
+                </ul>
+            </div>
+            {{-- <div class="col-6 col-md">
+                                    <h5>Resources</h5>
+                                    <ul class="list-unstyled text-small">
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
           <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
         </ul>
-      </div> --}}
-                <div class="col-4 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li class="mb-2">Tempat dimana berkumpulnya daging-daging berkualitas dengan harga yang
-                            murah, temukan daging yang anda inginkan disini.</li>
-                    </ul>
-                </div>
+         </div> --}}
+            <div class="col-4 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li class="mb-2">Tempat dimana berkumpulnya daging-daging berkualitas dengan harga
+                        yang
+                        murah, temukan daging yang anda inginkan disini.</li>
+                </ul>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+
+
     <!-- JS bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
@@ -270,7 +274,6 @@
     <script src="https://unpkg.com/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
         integrity="sha384-72Exo7Q+g6ULm+ZVwEBwJQLMn1uGd37IaXf+r/6jzidpzg+EoTJzN7ZwKysNY8gI" crossorigin="anonymous">
     </script>
-
 </body>
 
 </html>
