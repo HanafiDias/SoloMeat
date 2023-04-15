@@ -36,6 +36,7 @@
                     <div class="modal-content p-3">
                         <form action="/adminseller/store" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <h3>Add Seller</h3>
                             <div class="form-group">
                                 <label for="inputAddress">Store Name</label>
                                 <input type="text" class="form-control" id="inputAddress" placeholder="Meat Shop"
@@ -56,7 +57,7 @@
                                 <textarea class="form-control" name="alamat" placeholder="Jl.Berdua Bersamamu...." id="" cols="15"
                                     rows="5"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Add</button>
+                            <button type="submit" class="btn btn-primary">Add Seller</button>
                         </form>
                     </div>
                 </div>
@@ -104,6 +105,7 @@
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     @method('put')
+                                                    <h3>Edit Seller</h3>
                                                     <div class="form-group">
                                                         <label for="inputAddress">Store Name</label>
                                                         <input type="text" class="form-control" id="inputAddress"
@@ -127,7 +129,7 @@
                                                         <textarea class="form-control" name="alamat" placeholder="Jl.Berdua Bersamamu...." id="" cols="15"
                                                             rows="5">{{ $seller->alamat }}</textarea>
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Add</button>
+                                                    <button type="submit" class="btn btn-primary">Save</button>
                                                 </form>
                                             </div>
                                         </div>

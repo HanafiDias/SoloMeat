@@ -188,7 +188,7 @@
                             <div class="card mb-4 rounded-3 shadow-sm">
                                 <div class="card-header py-2 px-2">
                                     <img src="{{ asset('image/store/' . $item->gambar) }}" class="img-thumbnail"
-                                        width="300" height="300">
+                                        width="200" height="200">
                                 </div>
                                 <div class="card-body">
                                     <h2 class="card-title pricing-card-title">Rp. {{ number_format($item->harga) }}
@@ -227,10 +227,9 @@
 
     <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
-        <div class="container p-4 pb-0">
+        <div class="container p-3">
             <!-- Section: Social media -->
-            <section class="mb-4">
-
+            <section class="mb-1">
                 <!-- Google -->
                 <a class="btn btn-outline-light btn-floating m-1" href="mailto:hanafidias.hd@email.com"
                     role="button"><i class="fab fa-google"></i></a>
@@ -238,7 +237,6 @@
                 <!-- Instagram -->
                 <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/hanafidias/"
                     role="button"><i class="fab fa-instagram"></i></a>
-
 
                 <!-- Github -->
                 <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/HanafiDias"
@@ -249,43 +247,16 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: #171c31);">
+        <div class="text-center p-4" style="background-color: #171c31);">
             &copy; 2023 Copyright:
-            <strong class="text-white" href="">Hanafi Dias</strong>
+            <strong class="text-white" href="">Hanafi Dias - <a class="text-white" href="/"
+                    style="text-decoration: none;">
+                    SoloMeat</a> </strong>
         </div>
         <!-- Copyright -->
     </footer>
 
-    {{-- <footer class="pt-2 my-md-5 pt-md-3 px-4 border-top border-4">
-        <div class="row">
-            <div class="col-4 col-md">
-                <img class="mb-2" src="image/beef.png" width="50" height="50">
-                <small class="d-block mb-3 text-muted">&copy; 2023 Hanafi Dias Arif Dewanto</small>
-            </div>
-            <div class="col-4 col-md">
-                <h5>Contact</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-1"><a class="link-secondary text-decoration-none"
-                            href="https://github.com/HanafiDias" target="blank"><i class="fa-brands fa-github"></i>
-                            Hanafi Dias Arif Dewanto</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none"
-                            href="mailto:hanafidias.hd@email.com" target="blank"><i
-                                class="fa-regular fa-envelope"></i> Hanafi Dias Arif Dewanto</a></li>
-                    <li class="mb-1"><a class="link-secondary text-decoration-none"
-                            href="https://www.instagram.com/hanafidias/" target="blank"><i
-                                class="fa-brands fa-instagram"></i> hanafidias</a></li>
-                </ul>
-            </div>
-            <div class="col-4 col-md">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                    <li class="mb-2">Tempat dimana berkumpulnya daging-daging berkualitas dengan harga
-                        yang
-                        murah, temukan daging yang anda inginkan disini.</li>
-                </ul>
-            </div>
-        </div>
-    </footer> --}}
+
 
 
     <!-- JS bootstrap-->
@@ -301,6 +272,8 @@
     <script src="https://unpkg.com/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
         integrity="sha384-72Exo7Q+g6ULm+ZVwEBwJQLMn1uGd37IaXf+r/6jzidpzg+EoTJzN7ZwKysNY8gI" crossorigin="anonymous">
     </script>
+
+
 </body>
 
 </html>

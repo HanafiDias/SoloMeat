@@ -27,6 +27,7 @@
                     <div class="modal-content p-3">
                         <form action="/adminuser/store" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <h3>Add User</h3>
                             <div class="form-group">
                                 <label for="inputAddress">Fullname</label>
                                 <input type="text" class="form-control" id="inputAddress"
@@ -47,7 +48,7 @@
                                 <input type="text" class="form-control" id="inputAddress3"
                                     placeholder="Gunakan Format 628...." name="no_wa">
                             </div>
-                            <button type="submit" class="btn btn-primary">Add</button>
+                            <button type="submit" class="btn btn-primary">Add User</button>
                         </form>
                     </div>
                 </div>
@@ -95,6 +96,7 @@
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     @method('put')
+                                                    <h3>Edit User</h3>
                                                     <div class="form-group">
                                                         <label for="inputAddress">Fullname</label>
                                                         <input type="text" class="form-control" id="inputAddress"
@@ -119,7 +121,7 @@
                                                             placeholder="628...." name="no_wa"
                                                             value="{{ $user->no_wa }}">
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Add</button>
+                                                    <button type="submit" class="btn btn-primary">Save</button>
                                                 </form>
                                             </div>
                                         </div>

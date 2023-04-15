@@ -36,6 +36,7 @@
                     <div class="modal-content p-3">
                         <form action="/adminproduct/store" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <h3>Add Product</h3>
                             <div class="form-group">
                                 <label for="inputAddress">Product Name</label>
                                 <input type="text" class="form-control" id="inputAddress" placeholder="Name Meat"
@@ -122,7 +123,7 @@
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     @method('put')
-                                                    <h3>Edit data</h3>
+                                                    <h3>Edit Product</h3>
                                                     <div class="form-group">
                                                         <label for="inputAddress">Product Name</label>
                                                         <input type="text" class="form-control" id="inputAddress"
