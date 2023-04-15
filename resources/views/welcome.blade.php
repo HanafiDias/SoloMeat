@@ -37,6 +37,8 @@
         integrity="sha512-yz/zcjsEPGgd+V8eWfvMwA/Lm+2YRmjpX7W+1JvD3+q3dLrJW5In5+Dp5Jd0t/skaK1Q2X1x/GG+0oKJjKzEeA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- CSS AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -185,7 +187,8 @@
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                     @foreach ($data as $item)
                         <div class="col-md-3 col-lg-3 mb-4">
-                            <div class="card mb-4 rounded-3 shadow-sm">
+                            <div class="card mb-4 rounded-3 shadow-sm" data-aos="zoom-in-up"
+                                data-aos-easing="ease-out-cubic" data-aos-duration="1500">
                                 <div class="card-header py-2 px-2">
                                     <img src="{{ asset('image/store/' . $item->gambar) }}" class="img-thumbnail"
                                         width="200" height="200">
@@ -273,6 +276,11 @@
         integrity="sha384-72Exo7Q+g6ULm+ZVwEBwJQLMn1uGd37IaXf+r/6jzidpzg+EoTJzN7ZwKysNY8gI" crossorigin="anonymous">
     </script>
 
+    <!-- JS AOS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
