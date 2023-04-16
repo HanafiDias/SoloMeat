@@ -24,12 +24,6 @@
     <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#712cf9">
 
-
-    <!-- FontAwesomme -->
-    <script src="https://kit.fontawesome.com/1a35c69008.js" crossorigin="anonymous"></script>
-
-
-
     <!-- CSS bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -39,6 +33,9 @@
 
     <!-- CSS AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- FontAwesomme -->
+    <script src="https://kit.fontawesome.com/1a35c69008.js" crossorigin="anonymous"></script>
 
     <style>
         .bd-placeholder-img {
@@ -111,14 +108,84 @@
         }
 
         .gra {
-            background: linear-gradient(to bottom, #E4E2E9, #5E7496, #3F5F90, #0D101C);
+            background: linear-gradient(to bottom, #e4e0ff, #4f489d, #24243e);
         }
 
         .navbar .nav-link {
             color: #E56353 !important;
         }
     </style>
+    <style>
+        /* css card */
+        .cont {
+            position: relative;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-warp: warp;
+            padding: 10px;
+        }
 
+        .cont .card {
+            position: relative;
+            max-width: 300px;
+            height: 255px;
+            background: linear-gradient(to top, #E4E2E9, #5E7496);
+            margin: 50px 10px;
+            padding: 20px 10px;
+
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease-in-out;
+            border-radius: 15px;
+        }
+
+        .cont .card:hover {
+            height: 380px;
+            display: flex;
+        }
+
+
+        .cont .card .image {
+            position: relative;
+            width: 260px;
+            height: 260px;
+
+
+            top: -35%;
+            left: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .cont .card .image img {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+
+        .cont .card .content {
+            position: relative;
+            top: -150px;
+            padding: 10px 15px;
+            color: #ffffff;
+            text-align: center;
+
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+
+        }
+
+        .cont .card:hover .content {
+            margin-top: 40px;
+            visibility: visible;
+            opacity: 1;
+            transition-delay: 0.2s;
+
+        }
+    </style>
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet">
@@ -157,7 +224,7 @@
             <!-- slider -->
             <div class="container">
                 <div class="row">
-                    <div class="col-lg mb-4">
+                    <div class="col-lg mb-5">
                         <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active" data-interval="3000">
@@ -186,10 +253,11 @@
             <main>
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                     @foreach ($data as $item)
-                        <div class="col-md-3 col-lg-3 mb-4">
-                            <div class="card mb-4 rounded-3 shadow-sm" data-aos="zoom-in-up"
-                                data-aos-easing="ease-out-cubic" data-aos-duration="1500">
-                                <div class="card-header py-2 px-2">
+                        <div class="col-md-3 col-lg-3 mb-3">
+                            <div class="" data-aos="zoom-in-down" data-aos-easing="linier"
+                                data-aos-duration="2000">
+                                <!-- div atas ini terdapat class "card" dan "shadow-sm" jika mau pakai coding dibawah -->
+                                {{-- <div class="card-header py-2 px-2">
                                     <img src="{{ asset('image/store/' . $item->gambar) }}" class="img-thumbnail"
                                         width="200" height="200">
                                 </div>
@@ -217,6 +285,44 @@
                                                             class="fa-solid fa-cart-shopping"></i></button>
                                                 </a>
                                             </span>
+                                        </div>
+                                    </div>
+                                </div> --}}
+
+                                <div class=cont>
+                                    <div class=card>
+                                        <div class=image>
+                                            <img href="#" src="{{ asset('image/store/' . $item->gambar) }}">
+                                        </div>
+                                        <div class=content>
+                                            <h2 class="card-title pricing-card-title">Rp.
+                                                {{ number_format($item->harga) }}
+                                            </h2>
+                                            <div class="btn-group d-flex justify-content-between" role="group"
+                                                aria-label="Button group with nested dropdown">
+                                                <div class="container">
+                                                    <ul class="col-1 list-unstyled mt-1 mb-1">
+                                                        <li>{{ $item->produk }}</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="row text-end">
+                                                    <span style="font-size: 20px;">
+                                                        <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
+                                                            target="blank">
+                                                            <button type="button"
+                                                                class="w-80 btn btn-md btn-success"><i
+                                                                    class="fa-brands fa-whatsapp"></i></button>
+                                                        </a>
+                                                    </span>
+                                                    <span style="font-size: 20px;">
+                                                        <a href="{{ $item->link_toko_online }}" target="blank">
+                                                            <button type="button"
+                                                                class="w-80 btn btn-md btn-warning"><i
+                                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
