@@ -112,7 +112,7 @@
         }
 
         .navbar .nav-link {
-            color: #E56353 !important;
+            color: #000000 !important;
         }
     </style>
     <style>
@@ -169,7 +169,7 @@
             position: relative;
             top: -150px;
             padding: 10px 15px;
-            color: #ffffff;
+            color: #333232;
             text-align: center;
 
             visibility: hidden;
