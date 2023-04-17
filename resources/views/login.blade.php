@@ -52,15 +52,22 @@
 
                             <div class="card bg-glass ">
                                 <div class="card-body px-5 py-5 px-md-5">
-                                    <form>
+                                    <form action="/sesi/login" method="POST">
+                                        @csrf
                                         <!-- Email input -->
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="form3Example3" class="form-control" />
+                                            <input type="email" id="form3Example3" value="{{ Session::get('email') }}"
+                                                class="form-control" name="email" required
+                                                oninvalid="this.setCustomValidity('Email wajib di isi')"
+                                                oninput="this.setCustomValidity('')" />
                                             <label class="form-label" for="form3Example3">Email address</label>
                                         </div>
                                         <!-- Password input -->
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="form3Example4" class="form-control" />
+                                            <input type="password" id="form3Example4" class="form-control"
+                                                name="password" required
+                                                oninvalid="this.setCustomValidity('Password wajib di isi')"
+                                                oninput="this.setCustomValidity('')" />
                                             <label class="form-label" for="form3Example4">Password</label>
                                         </div>
 
@@ -74,7 +81,7 @@
                                         </div>
 
                                         <!-- Submit button -->
-                                        <button type="submit" class="btn btn-primary btn-block mb-2 ">
+                                        <button type="submit" name="sumbit" class="btn btn-primary btn-block mb-2">
                                             Sign in
                                         </button>
 
@@ -94,6 +101,8 @@
         </div>
     </section>
     <!-- Section: Design Block -->
+
+
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
     <!-- Custom scripts -->

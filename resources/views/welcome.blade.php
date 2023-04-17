@@ -200,10 +200,10 @@
                 <!-- Navbar brand -->
                 <a class="navbar-brand nav-link" href="/">
                     <img class="mb-2" src="image/beef.png" width="50" height="50">
-                    <strong>SOLOMEAT</strong>
+                    <strong> SOLOMEAT</strong>
                 </a>
                 <div class="d-flex align-items-center">
-                    <a class="btn btn-danger px-3" href="login" role="button"><i
+                    <a class="btn btn-danger px-3" href="/sesi/logout" role="button"><i
                             class="fa-solid fa-right-from-bracket"></i></a>
                 </div>
             </div>

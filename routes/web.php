@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TokoController;
 use App\Http\Controllers\UserController;
 use App\Models\toko;
@@ -72,3 +73,8 @@ Route::delete('/adminuser/{id}', [UserController::class, 'delete']);
 
 Route::get('/admin', [UserController::class, 'jumlah']);
 Route::get('/admin/master', [AdminController::class, 'Admin']);
+
+
+Route::get('/login', [SessionController::class, 'index']);
+Route::post('/sesi/login', [SessionController::class, 'login']);
+Route::get('/sesi/logout', [SessionController::class, 'logout']);
