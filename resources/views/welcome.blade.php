@@ -108,11 +108,11 @@
         }
 
         .gra {
-            background: linear-gradient(to bottom, #e4e0ff, #4f489d, #24243e);
+            background: linear-gradient(to left top, #240b36, #c31432, #240b36);
         }
 
         .navbar .nav-link {
-            color: #000000 !important;
+            color: #c31432 !important;
         }
     </style>
     <style>
@@ -131,7 +131,7 @@
             position: relative;
             max-width: 300px;
             height: 255px;
-            background: linear-gradient(to top, #E4E2E9, #5E7496);
+            background: linear-gradient(to right top, #0f0c29, #302b63, #24243e);
             margin: 50px 10px;
             padding: 20px 10px;
 
@@ -169,7 +169,7 @@
             position: relative;
             top: -150px;
             padding: 10px 15px;
-            color: #333232;
+            color: #FFF;
             text-align: center;
 
             visibility: hidden;
@@ -200,7 +200,7 @@
                 <!-- Navbar brand -->
                 <a class="navbar-brand nav-link" href="/">
                     <img class="mb-2" src="image/beef.png" width="50" height="50">
-                    <strong> SOLOMEAT</strong>
+                    {{-- <strong> SOLOMEAT</strong> --}}
                 </a>
                 <div class="d-flex align-items-center">
                     <a class="btn btn-danger px-3" href="/sesi/logout" role="button"><i
