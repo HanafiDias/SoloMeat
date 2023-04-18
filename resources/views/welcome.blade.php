@@ -114,6 +114,14 @@
         .navbar .nav-link {
             color: #c63929 !important;
         }
+
+        .jeneng {
+            color: #ffffff !important;
+        }
+
+        .sizenama {
+            font-size: 20px;
+        }
     </style>
     <style>
         /* css card */
@@ -202,9 +210,15 @@
                     <img class="mb-2" src="image/beef.png" width="60" height="55">
                     {{-- <strong> SOLOMEAT</strong> --}}
                 </a>
-                <div class="d-flex align-items-center">
-                    <a class="btn btn-danger px-3" href="/sesi/logout" role="button"><i
-                            class="fa-solid fa-right-from-bracket"></i></a>
+                <div class="dropdown d-flex align-items-center btn-group dropstart p-1 ">
+                    <button class="btn btn-danger dropdown-toggle sizenama rounded-pill" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i
+                            class="fa-regular fa-circle-user"></i>
+                        {{ auth()->user()->username }}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item"href="/sesi/logout">Logout</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>

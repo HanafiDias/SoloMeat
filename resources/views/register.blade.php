@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>SoloMeat | Login</title>
+    <title>SoloMeat | Register</title>
     <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
@@ -49,56 +49,71 @@
                         <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                             <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                             <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
                             <div class="card bg-glass">
                                 <div class="card-body px-5 py-5 px-md-5">
                                     <!-- 2 column grid layout with text inputs for the first and last names -->
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="form3Example1" class="form-control" />
-                                                <label class="form-label" for="form3Example1">Full Name</label>
+                                    <form action="/sesi/create" method="POST">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example1"
+                                                        value="{{ Session::get('fullname') }}" name="fullname"
+                                                        class="form-control" />
+                                                    <label class="form-label" for="form3Example1">Full Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-outline">
+                                                    <input type="text" id="form3Example2"
+                                                        value="{{ Session::get('username') }}" name="username"
+                                                        class="form-control" />
+                                                    <label class="form-label" for="form3Example2">Username</label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 mb-4">
-                                            <div class="form-outline">
-                                                <input type="text" id="form3Example2" class="form-control" />
-                                                <label class="form-label" for="form3Example2">Username</label>
-                                            </div>
+
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="form3Example3" value="{{ Session::get('email') }}"
+                                                name="email" class="form-control" />
+                                            <label class="form-label" for="form3Example3">Email Address</label>
                                         </div>
-                                    </div>
 
-                                    <!-- Email input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="form3Example3" class="form-control" />
-                                        <label class="form-label" for="form3Example3">Email Address</label>
-                                    </div>
+                                        <!-- NO Wa input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form3Example4" value="{{ Session::get('no_wa') }}"
+                                                name="no_wa" class="form-control" />
+                                            <label class="form-label" for="form3Example3">Number What'sApp</label>
+                                        </div>
 
-                                    <!-- Password input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example4" class="form-control" />
-                                        <label class="form-label" for="form3Example4">Password</label>
-                                    </div>
+                                        <!-- Password input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="form3Example5" value="{{ old('password') }}"
+                                                name="password" class="form-control" />
+                                            <label class="form-label" for="form3Example4">Password</label>
+                                        </div>
 
-                                    <!-- Confirm Password input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example4" class="form-control" />
-                                        <label class="form-label" for="form3Example4">Confirmation Password</label>
-                                    </div>
+                                        <!-- Confirm Password input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="form3Example6" class="form-control"
+                                                name="password_confirmation" />
+                                            <label class="form-label" for="form3Example4">Confirmation Password</label>
+                                        </div>
 
-                                    <!-- Submit button -->
-                                    <button type="submit" class="btn btn-primary btn-block mb-2">
-                                        Register
-                                    </button>
+                                        <!-- Submit button -->
+                                        <button name="submit" type="submit" class="btn btn-primary btn-block mb-2">
+                                            Register
+                                        </button>
 
-                                    <!-- Register buttons -->
-                                    <div class="text-center">
-                                        <p class="fw-bold text-muted">Already have account? </p>
-                                        <a href="login"
-                                            class="btn btn-outline-primary btn-block mb-1 ripple-surface-dark">
-                                            Login </a>
-                                        </form>
-                                    </div>
+                                        <!-- Register buttons -->
+                                        <div class="text-center">
+                                            <p class="fw-bold text-muted">Already have account? </p>
+                                            <a href="login"
+                                                class="btn btn-outline-primary btn-block mb-1 ripple-surface-dark">
+                                                Login </a>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
