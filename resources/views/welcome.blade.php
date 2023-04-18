@@ -108,11 +108,11 @@
         }
 
         .gra {
-            background: linear-gradient(to left top, #240b36, #c31432, #240b36);
+            background: linear-gradient(to left top, #060511, #302b63, #141423);
         }
 
         .navbar .nav-link {
-            color: #c31432 !important;
+            color: #c63929 !important;
         }
     </style>
     <style>
@@ -131,7 +131,7 @@
             position: relative;
             max-width: 300px;
             height: 255px;
-            background: linear-gradient(to right top, #0f0c29, #302b63, #24243e);
+            background: linear-gradient(to right bottom, #8e0e00, #1f1c18);
             margin: 50px 10px;
             padding: 20px 10px;
 
@@ -194,12 +194,12 @@
 <body>
     <div class="gra">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark d-flex d-lg-block"
-            style="z-index: 2000; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);">
+        <nav class="navbar navbar-expand-md navbar-dark d-flex d-md-block"
+            style="z-index: 2000; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
             <div class="container-fluid">
                 <!-- Navbar brand -->
                 <a class="navbar-brand nav-link" href="/">
-                    <img class="mb-2" src="image/beef.png" width="50" height="50">
+                    <img class="mb-2" src="image/beef.png" width="60" height="55">
                     {{-- <strong> SOLOMEAT</strong> --}}
                 </a>
                 <div class="d-flex align-items-center">
@@ -356,7 +356,7 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: #171c31);">
+        <div class="text-center p-4" style="background-color: #121213">
             &copy; 2023 Copyright:
             <strong class="text-white" href="">Hanafi Dias - <a class="text-white" href="/"
                     style="text-decoration: none;">
