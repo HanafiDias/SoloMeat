@@ -112,11 +112,27 @@
         }
 
         .navbar .nav-link {
-            color: #c63929 !important;
+             !important;
         }
 
         .jeneng {
+            color: #ffffff;
+            border-radius: 20px;
+        }
+
+        .dropdown.werno {
             background: linear-gradient(to right bottom, #8e0e00, #1f1c18);
+            color: #fff;
+            border: thin groove #ffffff;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .jeneng:hover {
+            background-color: #ffffff;
+            border: thin groove #ffffff;
+            border-radius: 20px;
+
         }
 
         .sizenama {
@@ -215,9 +231,9 @@
                     <div class="d-flex">
 
                     </div>
-                    <div class="dropdown d-flex align-items-center btn-group dropstart p-1 ">
-                        <button class="btn btn-light dropdown-toggle sizenama jeneng rounded-pill" type="button"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="dropdown d-flex align-items-center btn-group dropstart p-1 werno">
+                        <button class="btn dropdown-toggle sizenama jeneng" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             {{ auth()->user()->username }} <i class="fa-solid fa-shop"></i>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
