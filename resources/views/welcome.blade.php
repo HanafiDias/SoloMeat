@@ -116,7 +116,7 @@
         }
 
         .jeneng {
-            color: #ffffff !important;
+            background: linear-gradient(to right bottom, #8e0e00, #1f1c18);
         }
 
         .sizenama {
@@ -212,14 +212,17 @@
                         <img class="mb-2" src="image/beef.png" width="60" height="55">
                         {{-- <strong> SOLOMEAT</strong> --}}
                     </a>
+                    <div class="d-flex">
+
+                    </div>
                     <div class="dropdown d-flex align-items-center btn-group dropstart p-1 ">
-                        <button class="btn btn-danger dropdown-toggle sizenama rounded-pill" type="button"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i
-                                class="fa-regular fa-circle-user"></i>
-                            {{ auth()->user()->username }}
+                        <button class="btn btn-light dropdown-toggle sizenama jeneng rounded-pill" type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ auth()->user()->username }} <i class="fa-solid fa-shop"></i>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item"href="/sesi/logout">Logout</a></li>
+                            <li><a href="seller" class="dropdown-item">Dasboard Seller</a></li>
+                            <li><a class="dropdown-item" href="/sesi/logout">Logout</a></li>
                         </ul>
                     </div>
                 </div>

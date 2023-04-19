@@ -27,13 +27,23 @@ class SessionController extends Controller
 
         $infologin = [
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
+            'role' => 'admin'
         ];
 
         if (Auth::attempt($infologin)) {
-            return redirect('/');
+            return redirect('/admin');
         } else {
-            return redirect('login');
+            $infologin = [
+                'email' => $request->email,
+                'password' => $request->password,
+                'role' => 'user'
+            ];
+            if (Auth::attempt($infologin)) {
+                return redirect('/');
+            } else {
+                return redirect('/login');
+            }
         }
     }
 
