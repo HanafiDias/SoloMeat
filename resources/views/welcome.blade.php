@@ -138,6 +138,18 @@
         .sizenama {
             font-size: 20px;
         }
+
+
+        .glow {
+            box-shadow: 0 0 5px rgb(0, 255, 234),
+                0 0 25px rgb(0, 255, 234);
+        }
+
+        .glow:hover {
+            box-shadow: 0 0 5px rgb(0, 255, 234),
+                0 0 25px rgb(0, 255, 234), 0 0 50px rgb(0, 255, 234),
+                0 0 100px rgb(0, 255, 234), 0 0 200px rgb(0, 255, 234);
+        }
     </style>
     <style>
         /* css card */
@@ -228,11 +240,9 @@
                         <img class="mb-2" src="image/beef.png" width="60" height="55">
                         {{-- <strong> SOLOMEAT</strong> --}}
                     </a>
-                    <div class="d-flex">
 
-                    </div>
-                    <div class="dropdown d-flex align-items-center btn-group dropstart p-1 werno">
-                        <button class="btn dropdown-toggle sizenama jeneng" type="button" id="dropdownMenuButton1"
+                    <div class="dropdown d-flex align-items-center btn-group dropstart p-1">
+                        <button class="btn dropdown-toggle sizenama jeneng glow" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ auth()->user()->username }} <i class="fa-solid fa-shop"></i>
                         </button>
