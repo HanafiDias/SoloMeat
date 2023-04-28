@@ -16,6 +16,147 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="{{ asset('image/beef.png') }}">
+
+    <style>
+        .jeneng {
+            color: #ffffff;
+        }
+
+        .button-86 {
+            all: unset;
+            width: 100px;
+            height: 30px;
+            font-size: 16px;
+            background: transparent;
+            border: none;
+            position: relative;
+            color: #f0f0f0;
+            cursor: pointer;
+            z-index: 1;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-86::after,
+        .button-86::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -99999;
+            transition: all .6s;
+        }
+
+        .button-86::before {
+            transform: translate(0%, 0%);
+            width: 100%;
+            height: 100%;
+            background: #28282d;
+            border-radius: 10px;
+        }
+
+        .button-86::after {
+            transform: translate(10px, 10px);
+            width: 35px;
+            height: 35px;
+            background: #ffffff15;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 50px;
+        }
+
+        .button-86:hover::before {
+            transform: translate(5%, 20%);
+            width: 110%;
+            height: 110%;
+        }
+
+        .button-86:hover::after {
+            border-radius: 10px;
+            transform: translate(0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        .button-86:active::after {
+            transition: 0s;
+            transform: translate(0, 5%);
+        }
+
+
+        .button-85 {
+            padding: 1em 3em;
+            border: none;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-85:before {
+            content: "";
+            background: linear-gradient(45deg,
+                    #ff0000,
+                    #ff7300,
+                    #fffb00,
+                    #48ff00,
+                    #00ffd5,
+                    #002bff,
+                    #7a00ff,
+                    #ff00c8,
+                    #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing-button-85 20s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing-button-85 {
+            0% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 400% 0;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .button-85:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +192,10 @@
                             <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
                             <div class="card bg-glass ">
-                                <div class="card-body px-5 py-5 px-md-5">
+                                <div class="card-body px-5 py-3 px-md-5">
+                                    <div class="text-center">
+                                        <h2> <strong> LOGIN </strong></h2>
+                                    </div>
                                     <form action="/sesi/login" method="POST">
                                         @csrf
                                         <!-- Email input -->
@@ -81,16 +225,20 @@
                                         </div>
 
                                         <!-- Submit button -->
-                                        <button type="submit" name="sumbit" class="btn btn-primary btn-block mb-2">
-                                            Sign in
-                                        </button>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <button type="submit" name="sumbit"
+                                                class="btn btn-dark me-2 mb-3 button-85">
+                                                Sign in
+                                            </button>
+                                        </div>
 
-                                        <!-- Register buttons -->
-                                        <div class="text-center">
-                                            <p class="fw-bold text-muted">or Register :</p>
-                                            <a href="register"
-                                                class="btn btn-outline-primary btn-block mb-2 ripple-surface-dark">
+                                        <div class="d-flex justify-content-center align-items-center gap-4">
+                                            <a href="register" class="btn btn-outline-light me-2 mb-2 button-86">
                                                 Register</a>
+                                            <a href="/" class="btn btn-outline-light mb-2 button-86">Guest</a>
+                                        </div>
+
+
                                     </form>
                                 </div>
                             </div>
@@ -110,3 +258,5 @@
 </body>
 
 </html>
+
+<!-- HTML !-->

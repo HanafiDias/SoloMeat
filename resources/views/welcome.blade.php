@@ -115,11 +115,6 @@
              !important;
         }
 
-        .jeneng {
-            color: #ffffff;
-            border-radius: 20px;
-        }
-
         .dropdown.werno {
             background: linear-gradient(to right bottom, #8e0e00, #1f1c18);
             color: #fff;
@@ -127,6 +122,12 @@
             padding: 10px 20px;
             border-radius: 20px;
         }
+
+        .jeneng {
+            color: #ffffff;
+            border-radius: 20px;
+        }
+
 
         .jeneng:hover {
             background-color: #ffffff;
@@ -149,6 +150,44 @@
             box-shadow: 0 0 5px rgb(0, 255, 234),
                 0 0 25px rgb(0, 255, 234), 0 0 50px rgb(0, 255, 234),
                 0 0 100px rgb(0, 255, 234), 0 0 200px rgb(0, 255, 234);
+        }
+
+        /* CSS */
+        .button-89 {
+            --b: 3px;
+            /* border thickness */
+            --s: .45em;
+            /* size of the corner */
+            --color: #ffffff;
+
+            padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+            color: var(--color);
+            --_p: var(--s);
+            background:
+                conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+            transition: .4s linear, color 0s, background-color 0s;
+            outline: var(--b) solid #0000;
+            outline-offset: .6em;
+            font-size: 18px;
+
+            border: 0;
+
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-89:hover,
+        .button-89:focus-visible {
+            --_p: 0px;
+            outline-color: var(--color);
+            outline-offset: .05em;
+            color: #fff
+        }
+
+        .button-89:active {
+            background: var(--color);
+            color: #fff;
         }
     </style>
     <style>
@@ -227,21 +266,19 @@
     <link href="{{ asset('pengguna/pricing.css') }}" rel="stylesheet">
 </head>
 
-@auth
+<body>
+    <div class="gra">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark d-flex d-md-block"
+            style="z-index: 2000; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+            <div class="container-fluid">
+                <!-- Navbar brand -->
+                <a class="navbar-brand nav-link" href="/">
+                    <img class="mb-2" src="image/beef.png" width="60" height="55">
+                    {{-- <strong> SOLOMEAT</strong> --}}
+                </a>
 
-    <body>
-        <div class="gra">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-md navbar-dark d-flex d-md-block"
-                style="z-index: 2000; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-                <div class="container-fluid">
-                    <!-- Navbar brand -->
-                    <a class="navbar-brand nav-link" href="/">
-                        <img class="mb-2" src="image/beef.png" width="60" height="55">
-                        {{-- <strong> SOLOMEAT</strong> --}}
-                    </a>
-
-                    <div class="dropdown d-flex align-items-center btn-group dropstart p-1">
+                {{-- <div class="dropdown d-flex align-items-center btn-group dropstart p-1">
                         <button class="btn dropdown-toggle sizenama jeneng glow" type="button" id="dropdownMenuButton1"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{ auth()->user()->username }} <i class="fa-solid fa-shop"></i>
@@ -250,59 +287,85 @@
                             <li><a href="seller" class="dropdown-item">Dasboard Seller</a></li>
                             <li><a class="dropdown-item" href="/sesi/logout">Logout</a></li>
                         </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Navbar -->
+                    </div> --}}
 
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                <symbol id="check" viewBox="0 0 16 16">
-                    <title>Check</title>
-                    <path
-                        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                </symbol>
-            </svg>
+                @auth
+                    @if (auth()->user()->role == 'user' || auth()->user()->role == 'admin')
+                        <div class="dropdown d-flex align-items-center btn-group dropstart p-1">
+                            <button class="btn dropdown-toggle button-89" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ auth()->user()->username }}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                @if (auth()->user()->role == 'admin')
+                                    <li><a href="/admin" class="dropdown-item">Admin Dashboard</a></li>
+                                @endif
+                                @if (auth()->user()->role == 'user')
+                                    <li><a href="/adminseller" class="dropdown-item">Seller Dashboard</a></li>
+                                @endif
+                                <li><a href="/sesi/logout" class="dropdown-item">Logout</a></li>
+                            </ul>
+                        </div>
+                    @endif
+                @endauth
+
+                @guest
+                    <a href="login"><button class="btn btn-toggle button-89" type="button" aria-expanded="false">
+                            Login as Seller
+                        </button></a>
+                @endguest
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="check" viewBox="0 0 16 16">
+                <title>Check</title>
+                <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+            </symbol>
+        </svg>
 
 
 
-            <div class="p-3">
-                <!-- slider -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg mb-5">
-                            <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-interval="3000">
-                                        <img src="image/opening.png" class="d-block img-fluid" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-interval="3000">
-                                        <img src="image/event.png" class="d-block img-fluid" alt="...">
-                                    </div>
-                                    <div class="carousel-item" data-interval="3000">
-                                        <img src="image/sale.png" class="d-block img-fluid" alt="...">
-                                    </div>
+        <div class="p-3">
+            <!-- slider -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg mb-5">
+                        <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-interval="3000">
+                                    <img src="image/opening.png" class="d-block img-fluid" alt="...">
                                 </div>
-                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
+                                <div class="carousel-item" data-interval="3000">
+                                    <img src="image/event.png" class="d-block img-fluid" alt="...">
+                                </div>
+                                <div class="carousel-item" data-interval="3000">
+                                    <img src="image/sale.png" class="d-block img-fluid" alt="...">
+                                </div>
                             </div>
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <main>
-                    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                        @foreach ($data as $item)
-                            <div class="col-md-3 col-lg-3 mb-3">
-                                <div class="" data-aos="zoom-in-down" data-aos-easing="linier"
-                                    data-aos-duration="2000">
-                                    <!-- div atas ini terdapat class "card" dan "shadow-sm" jika mau pakai coding dibawah -->
-                                    {{-- <div class="card-header py-2 px-2">
+            <main>
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    @foreach ($data as $item)
+                        <div class="col-md-3 col-lg-3 mb-3">
+                            <div class="" data-aos="zoom-in-down" data-aos-easing="linier"
+                                data-aos-duration="2000">
+                                <!-- div atas ini terdapat class "card" dan "shadow-sm" jika mau pakai coding dibawah -->
+                                {{-- <div class="card-header py-2 px-2">
                                     <img src="{{ asset('image/store/' . $item->gambar) }}" class="img-thumbnail"
                                         width="200" height="200">
                                 </div>
@@ -334,54 +397,50 @@
                                     </div>
                                 </div> --}}
 
-                                    <div class=cont>
-                                        <div class=card>
-                                            <div class=image>
-                                                <img href="#" src="{{ asset('image/store/' . $item->gambar) }}">
-                                            </div>
-                                            <div class=content>
-                                                <h2 class="card-title pricing-card-title">Rp.
-                                                    {{ number_format($item->harga) }}
-                                                </h2>
-                                                <div class="btn-group d-flex justify-content-between" role="group"
-                                                    aria-label="Button group with nested dropdown">
-                                                    <div class="container">
-                                                        <ul class="col-1 list-unstyled mt-1 mb-1">
-                                                            <li>{{ $item->produk }}</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="row text-end">
-                                                        <span style="font-size: 20px;">
-                                                            <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
-                                                                target="blank">
-                                                                <button type="button"
-                                                                    class="w-80 btn btn-md btn-success"><i
-                                                                        class="fa-brands fa-whatsapp"></i></button>
-                                                            </a>
-                                                        </span>
-                                                        <span style="font-size: 20px;">
-                                                            <a href="{{ $item->link_toko_online }}" target="blank">
-                                                                <button type="button"
-                                                                    class="w-80 btn btn-md btn-warning"><i
-                                                                        class="fa-solid fa-cart-shopping"></i></button>
-                                                            </a>
-                                                        </span>
-                                                    </div>
+                                <div class=cont>
+                                    <div class=card>
+                                        <div class=image>
+                                            <img href="#" src="{{ asset('image/store/' . $item->gambar) }}">
+                                        </div>
+                                        <div class=content>
+                                            <h2 class="card-title pricing-card-title">Rp.
+                                                {{ number_format($item->harga) }}
+                                            </h2>
+                                            <div class="btn-group d-flex justify-content-between" role="group"
+                                                aria-label="Button group with nested dropdown">
+                                                <div class="container">
+                                                    <ul class="col-1 list-unstyled mt-1 mb-1">
+                                                        <li>{{ $item->produk }}</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="row text-end">
+                                                    <span style="font-size: 20px;">
+                                                        <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
+                                                            target="blank">
+                                                            <button type="button"
+                                                                class="w-80 btn btn-md btn-success"><i
+                                                                    class="fa-brands fa-whatsapp"></i></button>
+                                                        </a>
+                                                    </span>
+                                                    <span style="font-size: 20px;">
+                                                        <a href="{{ $item->link_toko_online }}" target="blank">
+                                                            <button type="button"
+                                                                class="w-80 btn btn-md btn-warning"><i
+                                                                    class="fa-solid fa-cart-shopping"></i></button>
+                                                        </a>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                </main>
-            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </main>
         </div>
-    @endauth
-    @guest
-        @include('login')
-    @endguest
+    </div>
     <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
         <div class="container p-3">
