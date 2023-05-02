@@ -160,14 +160,14 @@
             /* size of the corner */
             --color: #ffffff;
 
-            padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+            padding: calc(.4em + var(--s)) calc(.7em + var(--s));
             color: var(--color);
             --_p: var(--s);
             background:
                 conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
             transition: .4s linear, color 0s, background-color 0s;
             outline: var(--b) solid #0000;
-            outline-offset: .6em;
+            outline-offset: .3em;
             font-size: 18px;
 
             border: 0;
@@ -181,7 +181,7 @@
         .button-89:focus-visible {
             --_p: 0px;
             outline-color: var(--color);
-            outline-offset: .05em;
+            outline-offset: .2em;
             color: #fff
         }
 
@@ -301,7 +301,8 @@
                                     <li><a href="/admin" class="dropdown-item">Admin Dashboard</a></li>
                                 @endif
                                 @if (auth()->user()->role == 'user')
-                                    <li><a href="/adminseller" class="dropdown-item">Seller Dashboard</a></li>
+                                    <li><a href="seller/{{ auth()->user()->id }}" class="dropdown-item">Seller Dashboard</a>
+                                    </li>
                                 @endif
                                 <li><a href="/sesi/logout" class="dropdown-item">Logout</a></li>
                             </ul>

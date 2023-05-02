@@ -44,6 +44,10 @@
         /* ubah ukuran sesuai kebutuhan */
         object-fit: cover;
     }
+
+    .fontsize {
+        font-optical-sizing: auto;
+    }
 </style>
 
 <body class="hold-transition sidebar-mini layout-fixed">

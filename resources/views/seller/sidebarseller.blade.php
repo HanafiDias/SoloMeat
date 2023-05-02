@@ -12,7 +12,8 @@
          <!-- Sidebar user panel (optional) -->
          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
              <div class="info">
-                 <p style="color:aliceblue" class="d-block">Meet and Grill</p>
+                 <p style="color:aliceblue" class="d-block fontsize"><strong>
+                         {{ auth()->user()->username }} </strong></p>
              </div>
          </div>
 
@@ -21,7 +22,7 @@
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                  data-accordion="false">
                  <li class="nav-item">
-                     <a href="login" class="nav-link">
+                     <a href="/sesi/logout" class="nav-link">
                          <i class="fas fa-sign-out"></i>
                          <p>Logout</p>
                      </a>

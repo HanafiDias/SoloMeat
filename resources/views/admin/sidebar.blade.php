@@ -56,7 +56,7 @@
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                  data-accordion="false">
                  <li class="nav-item">
-                     <a href="/sesi/login" class="nav-link">
+                     <a href="/sesi/logout" class="nav-link">
                          <i class="fas fa-sign-out"></i>
                          <p>Logout</p>
                      </a>

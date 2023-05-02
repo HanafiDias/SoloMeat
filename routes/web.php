@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\SessionController;
@@ -44,9 +45,9 @@ Route::get('/adminuser', function () {
 Route::get('/adminseller', function () {
     return view('admin/seller');
 });
-Route::get('/seller', function () {
-    return view('seller/sell');
-});
+// Route::get('/seller', function () {
+//     return view('seller/sell');
+// });
 
 Route::get('/adminproduct', [TokoController::class, 'toko']);
 Route::get('/adminproduct/create', [TokoController::class, 'create']);
@@ -80,3 +81,21 @@ Route::post('/sesi/login', [SessionController::class, 'login']);
 Route::get('/sesi/logout', [SessionController::class, 'logout']);
 Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
+
+
+Route::get('/dashboard/{id}', 'DashboardController@show')->name('showDashboard');
+Route::get('/dashboard/{id}/edit', 'DashboardController@edit')->name('editDashboard');
+Route::put('/dashboard/{id}', 'DashboardController@update')->name('updateDashboard');
+
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('/seller/{id}', [DashboardController::class, 'index'])->name('seller.dashboard');
+});
+
+Route::middleware(['auth', 'user'])->group(function () {
+    Route::get('/seller/{id}/', [DashboardController::class, 'toko']);
+    Route::get('/seller/{id}/create', [DashboardController::class, 'create']);
+    Route::post('/seller/{id}/store', [DashboardController::class, 'store']);
+    Route::get('/seller/{id}/edit', [DashboardController::class, 'edit']);
+    Route::put('/seller/{id}/', [DashboardController::class, 'update']);
+    Route::delete('/seller/{id}/', [DashboardController::class, 'delete']);
+});
