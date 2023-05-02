@@ -125,6 +125,12 @@
                                                     @method('put')
                                                     <h3>Edit Product</h3>
                                                     <div class="form-group">
+                                                        <label for="inputAddress2">Seller</label>
+                                                        <input type="text" class="form-control" id="inputAddress2"
+                                                            name="nama_toko" value="{{ auth()->user()->username }}"
+                                                            name="nama_toko" readonly>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="inputAddress">Product Name</label>
                                                         <input type="text" class="form-control" id="inputAddress"
                                                             name="produk" value="{{ $seller->produk }}">
@@ -142,16 +148,10 @@
                                                             value="{{ $seller->harga }}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="inputAddress2">Seller</label>
-                                                        <input type="text" class="form-control" id="inputAddress2"
-                                                            placeholder="MeatShop" name="nama_toko"
-                                                            value="{{ $seller->nama_toko }}">
-                                                    </div>
-                                                    <div class="form-group">
                                                         <label for="inputAddress">Nomer Whatsapp</label>
                                                         <input type="text" class="form-control" id="inputAddress"
                                                             placeholder="628..." name="nomor_whatsapp"
-                                                            value="{{ $seller->nomor_whatsapp }}">
+                                                            value="{{ auth()->user()->no_wa }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="form-label" for="customFile">Product

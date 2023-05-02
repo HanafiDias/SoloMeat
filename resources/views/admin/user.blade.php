@@ -63,6 +63,7 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Nomor What'sapp</th>
+                        <th>Role</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -80,6 +81,9 @@
                             </td>
                             <td>
                                 <p class="fw-bold mb-1">{{ $user->no_wa }}</p>
+                            </td>
+                            <td>
+                                <p class="fw-bold mb-1">{{ $user->role }}</p>
                             </td>
                             <td class="d-flex">
                                 <div class="m-1">

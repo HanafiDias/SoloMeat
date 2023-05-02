@@ -68,10 +68,10 @@
             <table class="table table-bordered bg-white">
                 <thead class="bg-dark">
                     <tr>
-                        <th>Nama Toko</th>
-                        <th>Alamat Toko</th>
+                        <th>Fullname</th>
+                        <th>Name Shop</th>
                         <th>Nomer What'sapp</th>
-                        <th>Link Toko Online</th>
+                        <th>Email</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -79,16 +79,16 @@
                     <tbody>
                         <tr>
                             <td>
-                                <p class="fw-bold mb-1">{{ $seller->nama_toko }}</p>
+                                <p class="fw-bold mb-1">{{ $seller->fullname }}</p>
                             </td>
                             <td>
-                                <p class="fw-normal mb-1">{{ $seller->alamat }}</p>
+                                <p class="fw-normal mb-1">{{ $seller->nama_toko }}</p>
                             </td>
                             <td>
                                 <p class="fw-bold mb-1">{{ $seller->nomor_wa }}</p>
                             </td>
                             <td>
-                                <p class="fw-normal mb-1">{{ $seller->link_barang }}</p>
+                                <p class="fw-normal mb-1">{{ $seller->email }}</p>
                             </td>
                             <td class="d-flex">
                                 <div class="m-1">
