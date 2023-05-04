@@ -54,5 +54,6 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="image/beef.png" alt="" height="150" width="150">
+            <img class="animation__shake" src="{{ asset('iamge/beef.png') }}" alt="" height="150"
+                width="150">
         </div>

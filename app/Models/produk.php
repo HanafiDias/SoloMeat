@@ -9,6 +9,7 @@ class produk extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $fillable = ['counter'];
 
     public function getTable()
     {

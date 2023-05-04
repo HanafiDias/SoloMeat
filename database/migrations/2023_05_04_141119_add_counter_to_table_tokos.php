@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('table_tokos', function (Blueprint $table) {
-            $table->integer('user_id')->nullable()->after('id');
+            $table->integer('counter')->default(0);
         });
     }
 

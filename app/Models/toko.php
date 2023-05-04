@@ -9,7 +9,6 @@ class toko extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
     public function getTable()
     {
         return 'table_tokos';

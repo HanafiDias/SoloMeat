@@ -171,8 +171,8 @@
         );
       ">
                 <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-                    <div class="row gx-lg-5 align-items-center mb-5">
-                        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                    <div class="row gx-lg-5 align-items-center mb-5 justify-content-center ">
+                        {{-- <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
                             <p class="my-2 display-3 fw-bold ls-tight" style="color: #FFFFFF">
                                 SoloMeat</p>
                             <h2><span style="color:#FFFFFF">Didalam Makanan Yang Istimewa Terdapat Bahan Baku Yang
@@ -181,13 +181,12 @@
                             <p class="mb-4 fw-bold" style="color: #FFFFFF;">
                                 Temukan Daging Terbaik Anda Disini, SoloMeat Teman Berburu Daging Terbaik.
                             </p>
-                        </div>
-
-                        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
-                            <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-                            <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-                            <div class="card bg-glass">
-                                <div class="card-body px-5 py-3 px-md-5">
+                        </div> --}}
+                        <div class="col-lg-6 mb-5 mb-lg-0s ">
+                            <div id="radius-shape-1" class="rounded-circle shadow-5-strong"></div>
+                            <div id="radius-shape-2" class=" shadow-5-strong"></div>
+                            <div class="card bg-glass responsive">
+                                <div class="card-body px-5 py-3 px-md-5 ">
                                     <div class="text-center">
                                         <h2> <strong> REGISTER </strong></h2>
                                     </div>
@@ -207,7 +206,7 @@
                                                 <div class="form-outline">
                                                     <input type="text" id="form3Example2"
                                                         value="{{ Session::get('username') }}" name="username"
-                                                        class="form-control" />
+                                                        class="form-control" placeholder="Use your store name" />
                                                     <label class="form-label" for="form3Example2">Username</label>
                                                 </div>
                                             </div>
@@ -223,7 +222,7 @@
                                         <!-- NO Wa input -->
                                         <div class="form-outline mb-4">
                                             <input type="text" id="form3Example4" value="{{ Session::get('no_wa') }}"
-                                                name="no_wa" class="form-control" />
+                                                name="no_wa" class="form-control" placeholder="Use format 628..." />
                                             <label class="form-label" for="form3Example3">Number What'sApp</label>
                                         </div>
 

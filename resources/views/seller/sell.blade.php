@@ -48,8 +48,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Product Name</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="Name Meat"
-                                    name="produk">
+                                <input type="text" class="form-control" id="inputAddress"
+                                    placeholder="Name Meat Product" name="produk">
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress2">Link E-Commerse</label>
@@ -58,13 +58,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress2">Harga</label>
-                                <input type="text" class="form-control" id="inputAddress2" placeholder="Rp.xxxx"
-                                    name="harga">
+                                <input type="text" class="form-control" id="inputAddress2"
+                                    placeholder="Contoh: 50000" name="harga">
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="customFile">Product Image</label>
                                 <input type="file" class="form-control" id="customFile" accept="image/*"
                                     name="gambar">
+                                <p><small>Gunakan gambar dengan scale 1:1 atau persegi</small>
+                                </p>
                             </div>
                             <button type="submit" class="btn btn-primary">Add Product</button>
                         </form>
@@ -72,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <div class="p-3">
+        <div class="p-3 table-responsive">
             <table class="table bg-white">
                 <thead class="bg-dark">
                     <tr>
@@ -133,7 +135,8 @@
                                                     <div class="form-group">
                                                         <label for="inputAddress">Product Name</label>
                                                         <input type="text" class="form-control" id="inputAddress"
-                                                            name="produk" value="{{ $seller->produk }}">
+                                                            name="produk" placeholder="Name Meat Product"
+                                                            value="{{ $seller->produk }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputAddress2">Link E-Commerse</label>
@@ -144,7 +147,7 @@
                                                     <div class="form-group">
                                                         <label for="inputAddress2">Harga</label>
                                                         <input type="text" class="form-control" id="inputAddress2"
-                                                            placeholder="" name="harga"
+                                                            placeholder="contoh 50000" name="harga"
                                                             value="{{ $seller->harga }}">
                                                     </div>
                                                     <div class="form-group">
@@ -167,6 +170,8 @@
                                                         @if ($seller->gambar)
                                                             <small>Gambar Terpakai: {{ $seller->gambar }}</small>
                                                         @endif
+                                                        <p><small>Gunakan gambar dengan scale 1:1 atau persegi</small>
+                                                        </p>
                                                     </div>
                                                     <button type="submit" class="btn btn-primary">Save</button>
                                                 </form>
@@ -211,4 +216,4 @@
 <!-- /.content -->
 </div>
 
-@include('admin.footer')
+@extends ('admin.footer')

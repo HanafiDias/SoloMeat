@@ -26,7 +26,7 @@
     <!-- Main content -->
     <section class="content">
         <!-- Main row -->
-        <div class="ml-3">
+        {{-- <div class="ml-3">
             <button type="button" class="btn btn-info rounded-3 btn-md" data-toggle="modal"
                 data-target=".bd-example-modal-lg"><i class="fa-solid fa-box-open"></i> Product</button>
             <!-- Modal -->
@@ -66,13 +66,15 @@
                                 <label class="form-label" for="customFile">Product Image</label>
                                 <input type="file" class="form-control" id="customFile" accept="image/*"
                                     name="gambar">
+                                <p><small>Gunakan gambar dengan scale 1:1 atau persegi</small>
+                                </p>
                             </div>
                             <button type="submit" class="btn btn-primary">Add Product</button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="p-3 table-responsive">
             <table class="table table-bordered bg-white">
                 <thead class="bg-dark">
@@ -138,8 +140,7 @@
                                                     <div class="form-group">
                                                         <label for="inputAddress2">Harga</label>
                                                         <input type="text" class="form-control" id="inputAddress2"
-                                                            placeholder="" name="harga"
-                                                            value="{{ $item->harga }}">
+                                                            placeholder="" name="harga" value="{{ $item->harga }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="inputAddress2">Seller</label>
@@ -167,6 +168,8 @@
                                                         @if ($item->gambar)
                                                             <small>Gambar Terpakai: {{ $item->gambar }}</small>
                                                         @endif
+                                                        <p><small>Gunakan gambar dengan scale 1:1 atau persegi</small>
+                                                        </p>
                                                     </div>
                                                     <button type="submit" class="btn btn-primary">Save</button>
                                                 </form>
@@ -180,8 +183,7 @@
                                         @csrf
                                         @method('delete')
                                         <button type="button" class="btn btn-danger  btn-rounded btn-sm fw-bold"
-                                            data-toggle="modal"
-                                            data-target=".bd-hapus-modal-sm-{{ $item->id }}"><i
+                                            data-toggle="modal" data-target=".bd-hapus-modal-sm-{{ $item->id }}"><i
                                                 class="fa-solid fa-trash"></i></button>
                                         <!-- Modal -->
                                         <div class="modal fade bd-hapus-modal-sm-{{ $item->id }}" tabindex="-1"

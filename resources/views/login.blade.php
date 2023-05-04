@@ -191,7 +191,7 @@
                             <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                             <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
 
-                            <div class="card bg-glass ">
+                            <div class="card bg-glass responsive">
                                 <div class="card-body px-5 py-3 px-md-5">
                                     <div class="text-center">
                                         <h2> <strong> LOGIN </strong></h2>

@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>SOLOMEAT</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/pricing/">
@@ -36,6 +38,9 @@
 
     <!-- FontAwesomme -->
     <script src="https://kit.fontawesome.com/1a35c69008.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <style>
         .bd-placeholder-img {
@@ -365,39 +370,6 @@
                         <div class="col-md-3 col-lg-3 mb-3">
                             <div class="" data-aos="zoom-in-down" data-aos-easing="linier"
                                 data-aos-duration="2000">
-                                <!-- div atas ini terdapat class "card" dan "shadow-sm" jika mau pakai coding dibawah -->
-                                {{-- <div class="card-header py-2 px-2">
-                                    <img src="{{ asset('image/store/' . $item->gambar) }}" class="img-thumbnail"
-                                        width="200" height="200">
-                                </div>
-                                <div class="card-body">
-                                    <h2 class="card-title pricing-card-title">Rp. {{ number_format($item->harga) }}
-                                    </h2>
-                                    <div class="btn-group card-body d-flex justify-content-between" role="group"
-                                        aria-label="Button group with nested dropdown">
-                                        <div class="container">
-                                            <ul class="col-1 list-unstyled mt-1 mb-1">
-                                                <li>{{ $item->produk }}</li>
-                                            </ul>
-                                        </div>
-                                        <div class="row text-end">
-                                            <span style="font-size: 20px;">
-                                                <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
-                                                    target="blank">
-                                                    <button type="button" class="w-80 btn btn-md btn-success"><i
-                                                            class="fa-brands fa-whatsapp"></i></button>
-                                                </a>
-                                            </span>
-                                            <span style="font-size: 20px;">
-                                                <a href="{{ $item->link_toko_online }}" target="blank">
-                                                    <button type="button" class="w-80 btn btn-md btn-warning"><i
-                                                            class="fa-solid fa-cart-shopping"></i></button>
-                                                </a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div> --}}
-
                                 <div class=cont>
                                     <div class=card>
                                         <div class=image>
@@ -409,27 +381,35 @@
                                             </h2>
                                             <div class="btn-group d-flex justify-content-between" role="group"
                                                 aria-label="Button group with nested dropdown">
-                                                <div class="container">
+                                                <div class="container d-flex flex-column align-items-center gap-2">
                                                     <ul class="col-1 list-unstyled mt-1 mb-1">
                                                         <li>{{ $item->produk }}</li>
                                                     </ul>
+                                                    <span><i class="fa-solid fa-eye"></i> Dilihat
+                                                        {{ $item->counter }} x </span>
                                                 </div>
-                                                <div class="row text-end">
-                                                    <span style="font-size: 20px;">
-                                                        <a href="https://wa.me/{{ $item->nomor_whatsapp }}?text=Halo,apakah produk ini '{{ $item->produk }}' ready?"
-                                                            target="blank">
-                                                            <button type="button"
-                                                                class="w-80 btn btn-md btn-success"><i
-                                                                    class="fa-brands fa-whatsapp"></i></button>
-                                                        </a>
-                                                    </span>
-                                                    <span style="font-size: 20px;">
-                                                        <a href="{{ $item->link_toko_online }}" target="blank">
-                                                            <button type="button"
-                                                                class="w-80 btn btn-md btn-warning"><i
-                                                                    class="fa-solid fa-cart-shopping"></i></button>
-                                                        </a>
-                                                    </span>
+
+                                                <div class="d-flex flex-column align-items-center gap-2">
+                                                    <form action="{{ route('welcome', ['id' => $item->id]) }}"
+                                                        method="POST" target="_blank">
+                                                        @csrf
+                                                        <button type="submit"
+                                                            class="btn btn-md btn-success btn-whatsapp"
+                                                            id="btn-whatsapp-{{ $item->id }}"
+                                                            data-id="{{ $item->id }}" target="_blank">
+                                                            <i class="fab fa-whatsapp"></i>
+                                                        </button>
+                                                    </form>
+
+                                                    <form action="{{ route('shopee', ['id' => $item->id]) }}"
+                                                        method="POST" target="_blank">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-md btn-warning"
+                                                            id="btn-{{ $item->id }}"
+                                                            data-id="{{ $item->id }}">
+                                                            <i class="fa-solid fa-cart-shopping"></i>
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -473,28 +453,25 @@
         <!-- Copyright -->
     </footer>
 
+    < !--JS bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
+        <script src="https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-DrnM80GvnRB7sTDCvGOO2ZY0bF6a8omxKFbPPIZ/HjrCZp0gbAMukV69Uu1POUZZ" crossorigin="anonymous">
+        </script>
+        <script src="https://unpkg.com/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+            integrity="sha384-72Exo7Q+g6ULm+ZVwEBwJQLMn1uGd37IaXf+r/6jzidpzg+EoTJzN7ZwKysNY8gI" crossorigin="anonymous">
+        </script>
 
-
-
-    <!-- JS bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-    <script src="https://unpkg.com/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-        integrity="sha384-DrnM80GvnRB7sTDCvGOO2ZY0bF6a8omxKFbPPIZ/HjrCZp0gbAMukV69Uu1POUZZ" crossorigin="anonymous">
-    </script>
-    <script src="https://unpkg.com/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-        integrity="sha384-72Exo7Q+g6ULm+ZVwEBwJQLMn1uGd37IaXf+r/6jzidpzg+EoTJzN7ZwKysNY8gI" crossorigin="anonymous">
-    </script>
-
-    <!-- JS AOS-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+        <!-- JS AOS-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 
 </body>
 
