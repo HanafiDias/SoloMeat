@@ -386,7 +386,7 @@
                                                         <li>{{ $item->produk }}</li>
                                                     </ul>
                                                     <span><i class="fa-solid fa-eye"></i> Dilihat
-                                                        {{ $item->counter }} x </span>
+                                                        {{ $item->counter }} kali </span>
                                                 </div>
 
                                                 <div class="d-flex flex-column align-items-center gap-2">
