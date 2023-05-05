@@ -6,6 +6,14 @@
     </div>
 </footer>
 
+{{-- <script src="js/jquery-3.1.0.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tabel-data').DataTable();
+    });
+</script> --}}
+
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -48,6 +56,15 @@
 <script src="{{ asset('adminlte') }}/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('adminlte') }}/dist/js/pages/dashboard.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
 </body>
 
 </html>

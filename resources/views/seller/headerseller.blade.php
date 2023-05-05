@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SoloMeat | Admin Seller</title>
+    <title>SoloMeat | Dashboard Seller</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -35,6 +35,13 @@
     <script src="https://kit.fontawesome.com/1a35c69008.js" crossorigin="anonymous"></script>
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+
+
+
 </head>
 <style>
     .img-fluid {
@@ -54,6 +61,5 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('iamge/beef.png') }}" alt="" height="150"
-                width="150">
+            <h1 class="animation__shake" height="150" width="150"> Loading ...</h1>
         </div>

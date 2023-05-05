@@ -10,15 +10,16 @@
      <!-- Sidebar -->
      <div class="sidebar">
          <!-- Sidebar user panel (optional) -->
-         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-             <div class="info">
-                 <p style="color:aliceblue" class="d-block fontsize"><strong>
+         <div class="user-panel mt-3 mb-1 d-flex justify-content-start">
+             <div class="info ">
+                 <p style="color:aliceblue; font-size: 120%" class="d-block"> <i
+                         class="fa-solid fa-circle-user"></i><strong>
                          {{ auth()->user()->username }} </strong></p>
              </div>
          </div>
 
          <!-- Sidebar Menu -->
-         <nav class="mt-2">
+         <nav class="mt-1">
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                  data-accordion="false">
                  <li class="nav-item">

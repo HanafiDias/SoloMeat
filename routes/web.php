@@ -63,26 +63,6 @@ Route::get('/', [ProdukController::class, 'index'])->name('welcome');
 Route::post('/counter/{id}', [HitungController::class, 'hitung'])->name('welcome');
 Route::post('/{id}', [HitungController::class, 'hitungshp'])->name('shopee');
 
-// Route::get('/wa/{id}', [ProductController::class, 'whatsapp'])->name('whatsapp');
-
-
-
-// Route::get('/{id}', HitungCounter::class);
-
-// Route::post('/{id}', [HitungController::class, 'hitung'])->name('welcome');
-// Route::post('/', [HitungController::class, 'hitung'])->name('welcome');
-// Route::put('/counter', [TokoController::class, 'hitung']);
-// Route::match(['get', 'post'], '/produk/updateCounter', [ProdukController::class, 'updateCounter'])->name('produk.updateCounter');
-// Route::post('/produk/updateCounter', [ProdukController::class, 'updateCounter'])->name('produk.updateCounter');
-
-
-// Route::post('/{id}', [ProdukController::class, 'updateCounter'])->name('produk.updateCounter');
-// Route::get('/create', [ProdukController::class, 'create']);
-// // Route::post('/adminseller/store', [SellerController::class, 'store']);
-// Route::post('/store', [ProdukController::class, 'store']);
-
-
-
 
 Route::get('/adminseller', [SellerController::class, 'seller']);
 Route::get('/adminseller/create', [SellerController::class, 'create']);

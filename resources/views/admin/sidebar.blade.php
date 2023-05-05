@@ -10,9 +10,11 @@
      <!-- Sidebar -->
      <div class="sidebar">
          <!-- Sidebar user panel (optional) -->
-         <div class="user-panel mt-3 pb-0 mb-3 d-flex">
+         <div class="user-panel mt-3 mb-1 d-flex justify-content-start">
              <div class="info ">
-                 <p style="color:aliceblue" class="justify-content-center">Hanafi</p>
+                 <p style="color:aliceblue; font-size: 180%" class="d-block"> <i
+                         class="fa-solid fa-circle-user"></i><strong>
+                         {{ auth()->user()->username }} </strong></p>
              </div>
          </div>
 
